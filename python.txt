@@ -1,0 +1,277 @@
+The syntax of C++ includes.
+
+Header files
+Main function
+Class
+Methods
+Objects
+Instance variables
+Return statement
+
+The syntax of Python includes:
+
+Comments
+Docstrings
+Indentation
+Quotation -> Quotations are used to create string objects in Python
+Identifiers -> Identifiers are used to define an element in Python uniquely; now that element can be variable, function, class, etc.. 
+Variables
+String formatters
+
+
+Parameter					Python														C++
+Code				Python has fewer lines of code.									C++ tends to have long lines of code.
+Garbage Collection	Python supports garbage collection.									C++ doesn’t support garbage collection, 
+																			but it can be implemented.
+Syntax			Python uses short-hand syntax and has numerous short-hand structural iterators. 	C++ has a stiff learning curve as it has lots of predefined 
+			      It requires ‘self’ as a parameter to any class instance method.  	                  syntaxes and structures.C++ uses implicitly ‘this’ to refer to class instances.  
+Compilation			Python is interpreted.											C++ is precompiled.
+Speed				Python is slower since it uses interpreter and also						C++ is faster once compiled as compared to python.
+			      determines the data type at run time.	
+
+Nature			Python is dynamically typed.										C++ is statically typed.
+
+Functions			Python Functions do not have restrictions on the type of the 				In C++, the function can accept and return the type of 
+				argument and the type of its return value.							value which is already defined.
+Scope of Variable		In Python, variables are accessible even outside the loop.					In C++, the scope of variables is limited within the loops.
+
+
+
+list: A list is an ordered collection of data with elements separated by a comma and enclosed within square brackets.
+ Lists are mutable and can be modified after creation.
+list1 = [8, 2.3, [-4, 5], ["apple", "banana"]]
+
+A tuple is an ordered collection of data with elements separated by a comma and enclosed within parentheses. 
+Tuples are immutable and can not be modified after creation. 
+tuple1 = (("parrot", "sparrow"), ("Lion", "Tiger"))
+
+Note - > we convert the tuple to a list, manipulate items of the list using list methods, then convert list back to a tuple.
+
+dict: a dictionary is an unordered collection of data containing a key:value pair. The key:value pairs are enclosed within curly brackets.
+dict1 = {"name":"Sakshi", "age":20, "canVote":True}
+
+Set is an unordered collection of elements in which no element is repeated. The elements of sets are separated by a comma and contained within curly braces.
+set1 = {4, -5, 8, 3, 2.9}
+
+bytes: bytes() function is used to convert objects into byte objects, or create empty bytes object of the specified size.
+
+
+The process of converting numeric data from one type to another is called as type conversion.
+num1 = -25
+num2 = float(num1)
+
+Similar to type conversion, type casting is done when we want to specify a type on a variable. 
+str1 = "7"
+print(int(str1))
+
+consider the sentence: He said, “I want to eat an apple”.How will you print this statement in python?
+print('He said, "I want to eat an apple".')
+#OR
+print("He said, \"I want to eat an apple\".")
+
+What if you want to write multiline strings?
+
+receipe = """
+1. Heat the pan and add oil
+2. Crack the egg
+3. Add salt in egg and mix well
+4. Pour the mixture in pan
+5. Fry on medium heat
+"""
+print(receipe)
+
+note = '''
+This is a multiline string
+It is used to display multiline message in the program
+'''
+print(note)
+
+Note: Strings are arrays and arrays are iterable. Thus we can loop through strings.
+Note: This method of specifying the start and end index to specify a part of a string is called slicing. 
+
+
+pie = "ApplePie"
+print(pie[:5])      #Slicing from Start
+print(pie[5:])      #Slicing till End
+print(pie[2:6])     #Slicing in between
+print(pie[-8:])     #Slicing using negative index
+
+Apple
+Pie
+pleP
+ApplePie
+
+replace() : the replace() method replaces a string with another string.
+str2 = "Silver Spoon"
+print(str2.replace("Sp", "M"))
+Silver Moon
+
+split() : The split() method splits the give string at the specified instance and returns the separated strings as list items.
+str2 = "Silver Spoon"
+print(str2.split(" ")) 
+['Silver', 'Spoon']
+
+capitalize() : The capitalize() method turns only the first character of the string to uppercase and the rest other characters of the string are 
+turned to lowercase. The string has no effect if the first character is already uppercase.
+str1 = "hello"
+capStr1 = str1.capitalize()
+Hello
+
+title() : The title() method capitalizes each letter of the word within the string.
+str1 = "He's name is Dan. Dan is an honest man."
+print(str1.title())
+He'S Name Is Dan. Dan Is An Honest Man.
+
+List negative indexing:-
+colors = ["Red", "Green", "Blue", "Yellow", "Green"]
+#          [-5]    [-4]    [-3]     [-2]      [-1]
+print(colors[-1])
+print(colors[-3])
+print(colors[-5])
+
+animals = ["cat", "dog", "bat", "mouse", "pig", "horse", "donkey", "goat", "cow"]
+print(animals[3:7])	#using positive indexes
+print(animals[-7:-2])	#using negative indexes
+
+['mouse', 'pig', 'horse', 'donkey']
+['bat', 'mouse', 'pig', 'horse', 'donkey']
+
+print alternate value in List:-
+
+animals = ["cat", "dog", "bat", "mouse", "pig", "horse", "donkey", "goat", "cow"]
+print(animals[::2])		#using positive indexes
+print(animals[-8:-1:2])	#using negative indexes
+
+['cat', 'bat', 'pig', 'donkey', 'cow']
+['dog', 'mouse', 'horse', 'goat']
+
+
+1. Insert:-
+colors = ["voilet", "indigo", "blue"]
+#           [0]        [1]      [2]
+
+colors.insert(1, "green")   #inserts item at index 1
+# updated list: colors = ["voilet", "green", "indigo", "blue"]
+#       indexs              [0]       [1]       [2]      [3]
+
+2.append:-
+colors = ["voilet", "indigo", "blue"]
+colors.append("green")
+print(colors)
+['voilet', 'indigo', 'blue', 'green']
+
+3. extend:-
+we can also extend Distionary , tuple and set to a list.
+cars = ["Hyundai", "Tata", "Mahindra"]
+cars2 = {"Mercedes", "Volkswagen", "BMW"}
+cars.extend(cars2)    -> ['Hyundai', 'Tata', 'Mahindra', 'Mercedes', 'BMW', 'Volkswagen']
+
+students = ["Sakshi", "Aaditya", "Ritika"]
+students2 = {"Yash":18, "Devika":19, "Soham":19}    #only add keys, does not add values
+students.extend(students2)  -> ['voilet', 'indigo', 'blue', 'green', 'yellow', 'orange', 'red']
+
+
+Remove list item:-
+->colors.pop()        #removes the last item of the list
+->colors.pop(1)       #removes item at index 1
+->colors.remove("blue")
+->del colors[3]       #deletes item at specific from the list
+
+
+Change List Item:-
+names = ["Harry", "Sarah", "Nadia", "Oleg", "Steve"]
+names[1:4] = ["juan", "Anastasia"] ->['Harry', 'juan', 'Anastasia', 'Steve']
+
+
+Manupulating tuple
+->Tuples are immutable, hence if you want to add, remove or change tuple items, then first you must convert the tuple to a list. 
+Then perform operation on that list and convert it back to tuple.
+
+countries = ("Spain", "Italy", "India", "England", "Germany")
+temp = list(countries)
+temp.append("Russia")       #add item 
+temp.pop(3)                 #remove item
+temp[2] = "Finland"         #change item
+countries = tuple(temp)
+print(countries)
+('Spain', 'Italy', 'Finland', 'Germany', 'Russia')
+
+
+unpacking Tuple
+Unpacking is the process of assigning the tuple items as values to variables.
+fauna = ("cat", "dog", "horse", "pig", "parrot", "salmon")
+(*animals, bird, fish) = fauna
+print("Animals:", animals)
+print("Bird:", bird)
+print("Fish:", fish)
+
+Animals: ['cat', 'dog', 'horse', 'pig']
+Bird: parrot
+Fish: salmon
+
+Add items to set:-
+cities = {"Tokyo", "Madrid", "Berlin", "Delhi"}
+cities.add("Helsinki")
+print(cities)
+
+If you want to add more than one item:-
+cities = {"Tokyo", "Madrid", "Berlin", "Delhi"}
+cities2 = {"Helsinki", "Warsaw", "Seoul"}
+cities.update(cities2)
+print(cities) ->{'Seoul', 'Berlin', 'Delhi', 'Tokyo', 'Warsaw', 'Helsinki', 'Madrid'}
+
+I. union() and update():
+The union() method returns a new set whereas update() method adds item into the existing set
+
+cities = {"Tokyo", "Madrid", "Berlin", "Delhi"}
+cities2 = {"Tokyo", "Seoul", "Kabul", "Madrid"}
+cities3 = cities.union(cities2)
+print(cities3)
+
+cities = {"Tokyo", "Madrid", "Berlin", "Delhi"}
+cities2 = {"Tokyo", "Seoul", "Kabul", "Madrid"}
+cities.update(cities2)
+print(cities)
+
+II. intersection and intersection_update():
+
+cities = {"Tokyo", "Madrid", "Berlin", "Delhi"}
+cities2 = {"Tokyo", "Seoul", "Kabul", "Madrid"}
+cities3 = cities.intersection(cities2)
+print(cities3) ->{'Madrid', 'Tokyo'}
+
+cities = {"Tokyo", "Madrid", "Berlin", "Delhi"}
+cities2 = {"Tokyo", "Seoul", "Kabul", "Madrid"}
+cities.intersection_update(cities2)
+
+III. symmetric_difference and symmetric_difference_update():
+ prints only items that are not similar to both the sets. 
+
+IV. difference() and difference_update():
+items that are only present in the original set and not in both the sets. 
+
+cities = {"Tokyo", "Madrid", "Berlin", "Delhi"}
+cities2 = {"Seoul", "Kabul", "Delhi"}
+cities3 = cities.difference(cities2) -> {'Tokyo', 'Madrid', 'Berlin'}
+
+Accessing Dictionary items:
+
+I. Accessing single values:
+we can use  square brackets or by using get method
+info = {'name':'Karan', 'age':19, 'eligible':True}
+print(info['name'])
+print(info.get('eligible'))
+
+II. Accessing multiple values:
+info = {'name':'Karan', 'age':19, 'eligible':True}
+print(info.values()) ->dict_values(['Karan', 19, True])
+
+III. Accessing keys:
+info = {'name':'Karan', 'age':19, 'eligible':True}
+print(info.keys()) -> dict_keys(['name', 'age', 'eligible'])
+
+IV. Accessing key-value pairs:
+info = {'name':'Karan', 'age':19, 'eligible':True}
+print(info.items())
+
+dict_items([('name', 'Karan'), ('age', 19), ('eligible', True)])

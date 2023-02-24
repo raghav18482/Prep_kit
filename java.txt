@@ -1,0 +1,310 @@
+--> for java = https://www.interviewbit.com/java-interview-questions/
+
+1. How is frontend interacts with backend? Explain the architecture.
+
+2. Memory Storage in Java
+In Java, all objects are dynamically allocated on Heap. 
+This is different from C++ where objects can be allocated memory either on Stack or on Heap.
+In JAVA , when we allocate the object using new(), the object is allocated on Heap, otherwise on Stack if not global or static
+
+3. What are JVM, JRE, JDK?
+  JDK = Java Runtime Environment (JRE) + Development tools. (Develop,Compile,rum java application)
+  JRE = Java Virtual Machine (JVM) + Libraries to run the application. (env to run java application)
+  JVM = Only Runtime environment for executing the Java byte code. (interpreter to execute java program line by line)
+
+
+4. Exception handling in Java
+
+5. Concurrency in Java
+Multitasking - Multiple tasks/processes running concurrently on a single CPU. 
+The operating system executes these tasks by switching between them very frequently. The unit of concurrency, 
+in this case, is a Process. Multithreading - Multiple parts of the same program running concurrently.
+Concurrency is the ability to run several or multi programs or applications in parallel. The backbone of Java concurrency is threads 
+(a lightweight process, which has its own files and stacks and can access the shared data from other threads in the same process)
+
+6. How do you secure the project from attacks?
+Create an impenetrable password. ...
+Install antivirus software and a fire-wall. ...
+Back-up your data regularly. ...
+Regularly update your software. ...
+Use end to end encryption. ...
+Secure your Wifi network. ...
+
+7. Some HR questions like who is the CEO of IG and where IG headquarters located
+
+
+
+Features				C++	Java
+Abstraction				Yes	Yes
+Encapsulation			Yes	Yes
+Single Inheritance		Yes	Yes
+Multiple Inheritance		Yes	No
+Polymorphism			Yes	Yes
+Static Binding			Yes	Yes
+Dynamic Binding			Yes	Yes
+Operator Overloading		Yes	No
+Header Files			Yes	No
+Pointers				Yes	No
+Global Variables			Yes	No
+Template Class			Yes	No
+Interference and Packages	No	Yes
+API					No	Yes
+
+input in java= Scanner sc=new Scanner(System.in);  
+System.out.print("Enter first number- ");  
+int a= sc.nextInt();  
+
+java collection framework.
+https://www.javatpoint.com/collections-in-java
+
+java theory
+Java can be considered both a compiled and an interpreted language because its source code is first compiled into a binary byte-code. 
+This byte-code runs on the Java Virtual Machine (JVM), which is usually a software-based interpreter.
+
+JVM - A Java virtual machine is a virtual machine that enables a computer to run Java programs as well as programs written in other 
+      languages that are also compiled to Java bytecode.
+
+
+What is static control flow?
+The following are the steps of execution of static members:
+
+Identification of the static members from top to bottom.
+Execution of the static variables assignments and static blocks.
+Execution of the main method.
+It is a one-time activity that happens at the time of class loading.
+
+HashMap												HashTable
+HashMap is not synchronized thereby making it 					HashTable is synchronized and hence it is suitable for threaded applications.
+better for non-threaded applications.	
+Allows only one null key but any number of null in the values.		This does not allow null in both keys or values.
+Supports order of insertion by making use of 					Order of insertion is not guaranteed in HashTable.
+its subclass LinkedHashMap.	
+
+
+A String is made immutable due to the following reasons:
+String Pool: astorage area in java heap.
+Multithreading: 
+Collections: In the case of Hashtables and HashMaps, keys are String objects. If the String objects are not immutable, 
+then it can get modified during the period when it resides in the HashMaps
+
+What is instance control flow?
+For the execution of the Instance control flow creation of an object is a must.
+
+Identification of instance members from top to bottom.
+Execution of instance variable assignments and instance blocks from top to bottom.
+Execution of the constructor.
+
+In Java args contains the supplied command-line arguments as an array of String objects.
+String[] argv is a collection of Strings, separated by a space, which can be typed into the program on the terminal.
+
+Stack memory is the portion of memory that was assigned to every individual program. And it was fixed. On the other hand, 
+Heap memory is the portion that was not allocated to the java program but it will be available for use by the java program 
+when it is required, mostly during the runtime of the program. 
+
+->Main and PrintArray is the method that will be available in the stack area and as well as the variables declared 
+  that will also be in the stack area. 
+->And the Object (Integer Array of size 10) we have created, will be available in the Heap area because 
+  that space will be allocated to the program during runtime. 
+
+Object class in Java. The Object class is the parent class of all the classes in java by default.
+In other words, it is the topmost class of java.
+
+Exception handling:
+Suppose there are 10 statements in a Java program and an exception occurs at statement 5; the rest of the code will not be executed, i.e., 
+statements 6 to 10 will not be executed. However, when we perform exception handling, the rest of the statements will be executed.
+That is why we use exception handling in Java.
+
+Java try block is used to enclose the code that might throw an exception. It must be used within the method.
+If an exception occurs at the particular statement in the try block, the rest of the block code will not execute.
+
+Syntax of Java try-catch
+try{    
+//code that may throw an exception    
+}catch(Exception_class_Name ref){}    
+
+
+Syntax of try-finally block
+try{    
+//code that may throw an exception    
+}finally{}    
+
+Using relevant properties highlight the differences between interfaces and abstract classes.
+Availability of methods: Only abstract methods are available in interfaces, whereas non-abstract methods can be present along with abstract methods in abstract classes.
+
+Variable types: Static and final variables can only be declared in the case of interfaces, whereas abstract classes can also have non-static and non-final variables.
+
+Inheritance: Multiple inheritances are facilitated by interfaces, whereas abstract classes do not promote multiple inheritances.
+
+Data member accessibility: By default, the class data members of interfaces are of the public- type. Conversely, the class members for an abstract class can be protected or private also.
+
+Implementation: With the help of an abstract class, the implementation of an interface is easily possible. However, the converse is not true;
+
+
+Java Collection and framework:-
+
+The Collection in Java is a framework that provides an architecture to store and manipulate the group of objects.
+
+Collection is the interface where you group objects into a single unit. Collections is a utility class that has some set of operations you perform on Collection. 
+Collection does not have all static methods in it, but Collections consist of methods that are all static.
+
+Java Collection means a single unit of objects. 
+Java Collection framework provides many interfaces (Set, List, Queue, Deque) and 
+classes (ArrayList, Vector, LinkedList, PriorityQueue, HashSet, LinkedHashSet, TreeSet).
+
+The java.util package contains all the classes
+and interfaces
+for the Collection framework.
+
+Iterator interface
+Iterator interface provides the facility of iterating the elements in a forward direction only.
+
+There are only three methods in the Iterator interface:-
+1. public boolean hasNext()
+2. public Object next()
+3. public void remove()
+
+List Interface
+List interface is the child interface of Collection interface. 
+It inhibits a list type data structure in which we can store the ordered collection of objects. It can have duplicate values.
+-->List <data-type> list1= new ArrayList(); 
+
+ArrayList
+The ArrayList class implements the List interface.
+It uses a dynamic array to store the duplicate element of different data types.  
+ArrayList<String> list=new ArrayList<String>();//Creating arraylist  
+list.add("Ravi")
+
+LinkedList
+LinkedList implements the Collection interface. It uses a doubly linked list internally to store the elements. 
+-->LinkedList<String> al=new LinkedList<String>();  
+   al.add("Ravi");  
+
+Vector
+-->Vector uses a dynamic array to store the data elements. It is similar to ArrayList.
+Vector<String> v=new Vector<String>();  
+v.add("Ayush");  
+
+Stack
+The stack is the subclass of Vector. It implements the last-in-first-out data structure, i.e., Stack.
+Stack<String> stack = new Stack<String>();  
+stack.push("Ayush");  
+
+Queue Interface
+Queue interface maintains the first-in-first-out order.
+Queue<String> q1 = new PriorityQueue();  
+
+PriorityQueue
+The PriorityQueue class implements the Queue interface. It holds the elements or objects which are to be processed by their priorities.
+PriorityQueue doesn't allow null values to be stored in the queue.
+PriorityQueue<String> queue=new PriorityQueue<String>();  
+queue.add("Amit Sharma");  
+
+Deque Interface
+Deque interface extends the Queue interface. In Deque, we can remove and add the elements from both the side.
+Deque d = new ArrayDeque();  
+
+ArrayDeque
+ArrayDeque class implements the Deque interface. 
+It facilitates us to use the Deque. Unlike queue, we can add or delete the elements from both the ends.
+Deque<String> deque = new ArrayDeque<String>();  
+deque.add("Gautam");  
+
+Set Interface
+Set Interface in Java is present in java.util package. 
+It extends the Collection interface. It represents the unordered set of elements which doesn't allow us to store the duplicate items.
+
+HashSet
+HashSet class implements Set Interface. It represents the collection that uses a hash table for storage. 
+Hashing is used to store the elements in the HashSet. It contains unique items.
+HashSet<String> set=new HashSet<String>();  
+set.add("Ravi");  
+
+
+LinkedHashSet
+LinkedHashSet class represents the LinkedList implementation of Set Interface. 
+It extends the HashSet class and implements Set interface.
+Like HashSet, It also contains unique elements. It maintains the insertion order and permits null elements.
+LinkedHashSet<String> set=new LinkedHashSet<String>();  
+set.add("Ravi");  
+
+
+SortedSet Interface
+SortedSet is the alternate of Set interface that provides a total ordering on its elements. 
+The elements of the SortedSet are arranged in the increasing (ascending) order.
+SortedSet<data-type> set = new TreeSet();  
+
+TreeSet
+Java TreeSet class implements the Set interface that uses a tree for storage. 
+Like HashSet, TreeSet also contains unique elements. However, the access and retrieval time of TreeSet is quite fast. 
+The elements in TreeSet stored in ascending order.
+TreeSet<String> set=new TreeSet<String>();  
+set.add("Ravi");  
+
+
+
+
+Java HashSet
+
+Java HashSet class hierarchy
+Java HashSet class is used to create a collection that uses a hash table for storage. 
+It inherits the AbstractSet class and implements Set interface.
+HashSet allows null value.
+HashSet class is non synchronized.
+HashSet doesn't maintain the insertion order. Here, elements are inserted on the basis of their hashcode.
+HashSet is the best approach for search operations.
+
+treeset is in ordered and hash set is not in order.
+
+Java HashMap
+
+Java HashMap class hierarchy
+Java HashMap class implements the Map interface which allows us to store key and value pair, where keys should be unique. 
+
+
+Java Hashtable class
+
+Java Hashtable class implements a hashtable, which maps keys to values. It inherits Dictionary class and implements the Map interface.
+Hashtable<Integer,String> hm=new Hashtable<Integer,String>();  
+hm.put(100,"Amit");  
+
+
+Java Comparator interface
+It provides multiple sorting sequences, i.e., you can sort the elements on the basis of any data member, 
+for example, rollno, name, age or anything else.
+
+public int compare(Object obj1, Object obj2)  -> It compares the first object with the second object.
+public boolean equals(Object obj)		    -> It is used to compare the current object with the specified object.
+public boolean equals(Object obj)		    -> It is used to compare the current object with the specified object.
+
+
+
+Java Comparable interface
+Java Comparable interface is used to order the objects of the user-defined class. 
+This interface is found in java.lang package and contains only one method named compareTo(Object).
+Comparable interface that sorts the list elements on the basis of age.
+
+
+Comparable											Comparator
+1) Comparable provides a single sorting sequence.			The Comparator provides multiple sorting sequences. 
+2) Comparable affects the original class, i.e., 			Comparator doesn't affect the original class, i.e., 
+   the actual class is modified.					       the actual class is not modified.
+3) Comparable provides compareTo() method to sort elements.		Comparator provides compare() method to sort elements.
+4) We can sort the list elements of Comparable 				We can sort the list elements of Comparator type by 
+   type by Collections.sort(List) method.					Collections.sort(List, Comparator) method.
+
+
+Difference between List and Set
+A list can contain duplicate elements whereas Set contains unique elements only.
+
+Difference Between ArrayList and LinkedList
+similarty -> ArrayList and LinkedList both implement the List interface and maintain insertion order. Both are non-synchronized classes.
+
+			ArrayList																LinkedList
+1) ArrayList internally uses a dynamic array to store the elements.			LinkedList internally uses a doubly linked list to store the elements.
+2) Manipulation with ArrayList is slow because it internally uses an array. 		Manipulation with LinkedList is faster than ArrayList because it uses a doubly linked list.
+3) An ArrayList class can act as a list only because it implements List only.		LinkedList class can act as a list and queue both because it implements List and Deque interfaces.
+4) ArrayList is better for storing and accessing data.					LinkedList is better for manipulating data.
+5) The memory location for the elements of an ArrayList is contiguous.			The location for the elements of a linked list is not contagious.
+6) Generally, when an ArrayList is initialized, 						There is no case of default capacity in a LinkedList. 
+   a default capacity of 10 is assigned to the ArrayList.					In LinkedList, an empty list is created when a LinkedList is initialized.
+7) To be precise, an ArrayList is a resizable array.						LinkedList implements the doubly linked list of the list interface.

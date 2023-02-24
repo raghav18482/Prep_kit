@@ -1,0 +1,320 @@
+--> for cpp = https://www.interviewbit.com/cpp-interview-questions/
+
+
+		Static Array									Dynamic Array
+Static arrays are allocated memory at compile time.			Dynamic array is located at run-time.
+The size of static array is fixed.						The size of dynamic array is fixed.
+It is located in stack memory space.					It is located in heap memory space.
+int array[10]; //array of size 10						int* array = new int[10];
+
+Aggregation vs Composition 
+1. Dependency: Aggregation implies a relationship where the child can exist independently of the parent. 
+For example, Bank and Employee, delete the Bank and the Employee still exist. 
+whereas Composition implies a relationship where the child cannot exist independent of the parent.
+Example: Human and heart, heart don’t exist separate to a Human
+
+2. Type of Relationship: Aggregation relation is “has-a” and composition is “part-of” relation.
+
+3. Type of association: Composition is a strong Association whereas Aggregation is a weak Association.
+
+
+Cohesion														Coupling
+Cohesion is the indication of the relationship within module			Coupling is the indication of the relationships between modules
+
+Cohesion shows the module’s relative functional strength				Coupling shows the relative independence among the modules
+
+Cohesion is a degree (quality) to which a component/module 				Coupling is a degree to which a component/module is connected to the other modules
+focuses on the single thing	
+
+While designing we should strive for high cohesion. 					While designing we should strive for low coupling. 
+Ex: cohesive component/module focus on a single task with little 			Ex: dependency between modules should be less
+interaction with other modules of the system	
+
+Cohesion is the kind of natural extension of data hiding, 				Making private fields, private methods and non public classes provides loose coupling
+for example, class having all members visible with a package 
+having default visibility
+
+Cohesion is Intra – Module Concept								Coupling is Inter -Module Concept
+
+How is Java different from C++?
+
+->C++ is only a  compiled language, whereas Java is compiled as well as an interpreted language.
+->Java programs are machine-independent whereas a c++ program can run only in the machine in which it is compiled. 
+->C++ allows users to use pointers in the program. Whereas java doesn’t allow it. Java internally uses pointers. 
+->C++ supports the concept of Multiple inheritances whereas Java doesn't support this. 
+  And it is due to avoiding the complexity of name ambiguity that causes the diamond problem.
+
+
+Sets vs Unordered Sets 
+Set is an ordered sequence of unique keys whereas unordered_set is a set in which key can be stored in any order,so unordered.
+Set is implemented as a balanced tree structure that is why it is possible to maintain order between the elements (by specific tree traversal).
+The time complexity of set operations is O(log n) while for unordered_set, it is O(1). 
+
+ 
+                 set	                                                   map
+
+1.Set is used to store all the unique elements.		map is used to store all the unique elements.	
+2.Its syntax is -:                                    Its syntax is -:
+set<data_type>name_of_set;                            map<data_type , data_type>name_of_map;
+3.It stores the elements in increasing order	      It stores the elements in key , value pairs.
+4.Set is implemented using Binary search tree.		Map is implemented using Balance Binary tree.
+5.Sets are traversed using the iterators. 	      It is defined in #include <map> header file.
+
+
+
+                | map                 | unordered_map
+---------------------------------------------------------
+Ordering        | increasing  order   | no ordering
+                | (by default)        |
+
+Implementation  | Self balancing BST  | Hash Table
+                | like Red-Black Tree |  
+
+search time     | log(n)              | O(1) -> Average 
+                |                     | O(n) -> Worst Case
+
+Insertion time  | log(n) + Rebalance  | Same as search
+                      
+Deletion time   | log(n) + Rebalance  | Same as search
+
+
+Red-Black Tree:-
+->Red Black Trees provide faster insertion and removal operations than AVL trees as --"fewer rotations"-- are done due to 
+relatively relaxed balancing.
+->It does not provide efficient searching.
+->Red-Black Trees are used in most of the language libraries like map, multimap, multiset in C++, etc.
+->Take less processing for balancing i.e.; maximum two rotation required
+
+Sr.No.	Algorithm	Time Complexity
+1.		Search	O(log n)
+2.		Insert	O(log n)
+3.		Delete	O(log n)
+
+
+AVL Tree:-
+->AVL trees provide complex insertion and removal operations as --"more rotations"-- are done due to relatively relaxed balancing.
+->It provides efficient searching.
+->AVL trees are used in databases where faster retrievals are required.
+->Take more processing for balancings
+Sr.No.	Algorithm	Time Complexity
+1.		Search	O(h)
+2.		Insert	O(h)
+3.		Delete	O(h)
+h->height of the BST
+
+Full Binary Tree:-
+A Binary Tree is a full binary tree if every node has 0 or 2 children.
+
+Complete Binary Tree :-
+A Binary Tree is a Complete Binary Tree if all the levels are completely filled except possibly the last level and 
+the last level has all keys as left as possible.
+
+Perfect Binary Tree :-
+
+A Binary tree is a Perfect Binary Tree in which all the internal nodes have two children and all leaf nodes are at the same level. 
+
+Balanced Binary Tree:-
+A binary tree is balanced if the height of the tree is O(Log n) where n is the number of nodes. For Example, 
+the AVL tree maintains O(Log n) height by making sure that the difference between the heights of the left and right subtrees is at most 1.
+Red-Black trees maintain O(Log n) height by making sure that the number of Black nodes on every root to leaf paths is the same and there are no adjacent red nodes. 
+Balanced Binary Search trees are performance-wise good as they provide O(log n) time for search, insert and delete. 
+
+
+Algorithm			Time Complexity					Space Complexity
+ 	  			Best		Average	 	Worst	           Worst
+Selection Sort		Ω(n^2)	 θ(n^2)		O(n^2)		O(1)
+Bubble Sort	Ω(n)		θ(n^2)	 O(n^2)		O(n^2)		O(1)
+Insertion Sort		Ω(n)		 θ(n^2)		O(n^2)		O(1)
+Heap Sort			Ω(n log(n))	 θ(n log(n))	O(n log(n))		O(1)
+Quick Sort			Ω(n log(n))	 θ(n log(n))	O(n^2)		O(n)
+Merge Sort			Ω(n log(n))	 θ(n log(n))	O(n log(n))		O(n)
+
+
+Heap;-
+A Heap is a special Tree-based data structure in which the tree is a complete binary tree.
+Heapify: a process of creating a heap from an array.
+
+Insertion: process to insert an element in existing heap time complexity O(log N).
+
+Deletion: deleting the top element of the heap or the highest priority element, and then organizing the heap and
+
+returning the element with time complexity O(log N).
+
+Peek: to check or find the most prior element in the heap, (max or min element for max and min heap).
+
+
+
+Vector														List
+It has contiguous memory.										While it has non-contiguous memory.
+
+It is synchronized.											While it is not synchronized.
+
+Vector may have a default size.									List does not have default size.
+
+In vector, each element only requires the space for itself only.				In list, each element requires extra space for the node which holds the element,
+														including pointers to the next and previous elements in the list.
+
+Insertion at the end requires constant time but 						Insertion is cheap no matter where in the list it occurs.
+insertion elsewhere is costly.
+
+Vector is thread safe.											List is not thread safe.
+
+Deletion at the end of the vector needs constant time 					Deletion is cheap no matter where in the list it occurs.
+but for the rest it is O(n).
+
+Random access of elements is possible.								Random access of elements is not possible.
+
+Iterators become invalid if elements are added to or removed 				Iterators are valid if elements are added to or removed from the list.
+from the vector.
+
+
+Applications of Deque:- 
+Since Deque supports both stack and queue operations, it can be used as both. 
+The Deque data structure supports clockwise and anticlockwise rotations in O(1) time which can be useful in certain applications. 
+Also, the problems where elements need to be removed and or added to both ends can be efficiently solved using Deque
+
+
+Priority Queue:-
+in C++ STL, by default, the top element is always the greatest element. We can also change it to the smallest element at the top. 
+Priority queues are built on the top to the max heap and uses array or vector as an internal structure.
+
+priority_queue<int> gq -> 30    20    10    5    1
+
+// Creates a min heap
+priority_queue <int, vector<int>, greater<int> > pq; -> 1 5 10 20 30 
+
+
+
+ 					Graph											Tree
+Definition		Graph is a non-linear data structure. 				Tree is a non-linear data structure.
+Structure		It is a collection of vertices/nodes and edges.			It is a collection of nodes and edges.
+Edges			Each node can have any number of edges.				If there is n nodes then there would be n-1 number of edges
+Types of Edges	They can be directed or undirected					They are always directed
+Root node		There is no unique node called root in graph.			There is a unique node called root(parent) node in trees.
+Loop Formation	A cycle can be formed.							There will not be any cycle.
+Traversal		For graph traversal, we use Breadth-First				We traverse a tree using in-order, pre-order, or post-order traversal methods.
+                  Search (BFS), and Depth-First Search (DFS).
+Applications	For finding shortest path in networking graph is used.	For game trees, decision trees, the tree is used.
+
+
+Android extra:-
+
+In this lab we will be learning how to use and extend the Android user interface library.
+
+a. Views, View Groups, Layouts, and Widgets are and how they relate to each other.
+
+  -> view is a small rectangular box that responds to user inputs. Eg: EditText, Button, CheckBox, etc. 
+  ViewGroup is an invisible container of other views (child views) and other ViewGroup.
+  A ViewGroup is a special view that can contain other views. The ViewGroup is the base class for Layouts in android, 
+  like LinearLayout , RelativeLayout , FrameLayout
+  The View objects are usually called "widgets" and can be one of many subclasses, such as Button or TextView . 
+  The ViewGroup objects are usually called "layouts" can be one of many types that provide a different layout structure,
+
+b. How to declare and reference resources in code.
+
+c.How to navigate between multiple activities.
+  Create an Intent referencing the Activity class you want to switch to. Call the startActivity(Intent) method to switch to the Activity.
+
+d. How to share the data between the activities.
+  The easiest way to do this would be to pass the session id to the signout activity in the Intent you're using to start the activity: 
+  Intent intent = new Intent(getBaseContext(), SignoutActivity.class);  
+  intent.putExtra("EXTRA_SESSION_ID", sessionId);
+  startActivity(intent);
+
+e. Explore life-cycle methods of an activity.
+  An Android activity goes through six major lifecycle stages or callbacks.
+  These are: onCreate() , onStart() , onResume() , onPause() , onStop() , and onDestroy() .
+
+f. How to use Events and Event Listeners.
+  An ActionListener implementation must include a processAction(ActionEvent) method.
+  Event listeners represent the interfaces responsible to handle events. 
+  An event listener is a procedure or function in a computer program that waits for an event to occur.
+
+g. How to create Toast Notifications.
+
+You will expand on your knowledge of the Android user interface library.
+
+a. How to declare layouts statically as an xml resource
+  Using Android's XML vocabulary, you can quickly design UI layouts and the screen elements they contain, 
+  in the same way you create web pages in HTML — with a series of nested elements. 
+  Each layout file must contain exactly one root element, which must be a View or ViewGroup object.
+
+b. How to create custom Views from scratch to suit a specific need.
+c. How to create Options and Context Menus.
+d. How to use List Adapter and Array Adapter to bind data source to a List View.
+  display an array of items into the ListView:-
+  // Construct the data source
+  ArrayList<User> arrayOfUsers = new ArrayList<User>();
+  // Create the adapter to convert the array to views
+  UsersAdapter adapter = new UsersAdapter(this, arrayOfUsers);
+  // Attach the adapter to a ListView
+  ListView listView = (ListView) findViewById(R.id.lvItems);
+  listView.setAdapter(adapter);
+
+e. How to create Alert Dialog and progress Dialog in your activity.
+
+
+f.Gradel file:-
+
+Top-Level Build File: This is where you'll find the configuration options that are common to all the modules that make up your project.
+
+Module-Level Build File: Each module has its own Gradle build file that contains module-specific build settings.
+You'll spend most of your time editing module-level build file(s) rather than your project's top-level build file
+
+What is Android manifest xml?
+Every app project must have an AndroidManifest. xml file (with precisely that name) at the root of the project source set.
+The manifest file describes essential information about your app to the Android build tools, the Android operating system, 
+and Google Play.
+
+
+g.What are models?
+  In very simpler terms, models are just classes which help us to determine the structure of the data, for eg - API responses. 
+  We all know the concept of classes in Object Oriented Programming, similar to that , we can declare the variables,
+  their data types and can write some methods to add some functionality, for eg - return sume of two numbers. 
+
+f.why we need models for application? 
+  We can serialize this JSON string using the dart:convert library uisng the json.decode() method that takes a string value and 
+  returns Map<String,dynamic>.
+
+
+extra:-
+S.NO.
+
+			AGILE												SDLC
+
+01.	Agile is a methodology following 					SDLC is a process of design and development of a product or service.
+      an  iterative approach used for project 
+	management purposes.
+02.	It is easier to use and implement.					Software Development Life Cycle is easy to understand and needs little 
+											systematic approach for implementation.
+
+03.	It came out in 2001 and it was made by 				Software Development Life Cycle was found in 1960.
+	a joint collaboration of 17 software developers.
+
+04.	Agile constitutes of different phases.				SDLC constitutes of different stages
+
+05.	Agile has a faster approach comparatively.			SDLC has a systematic approach.
+
+06.	Agile is more suited for small scale projects.			SDLC can be used for any sized projects
+
+07.	Agile allows dynamic changes in requirements.			SDLC doesn’t allow changes after initial stage.
+
+08.	It follows a continuous cycle.					It follows a sequential stages.
+
+09.	It requires close customer involvement.				It requires close project manager involvement.
+
+
+SDLC 5 main Phases:
+
+Planning
+Designing
+Developing
+Testing
+Maintenance
+
+
+firestore database vs realtime database:-
+
+If you don't need advanced querying, sorting and transactions, we recommend Realtime Database. 
+Advanced querying, sorting, and transactions. If you need complex interactions with your data, 
+for example in ecommerce apps, we recommend Cloud Firestore.
