@@ -10,6 +10,7 @@ int main() {
     string str5(5, 'A'); // Initializes with 5 'A' characters
     str3.append(" Language"); //C++ Programming Language
 
+
     //adding int to string without to_string() opertion
     int i=3;
     string s;
@@ -34,8 +35,7 @@ int main() {
     char c = str3.back();//take last character
     str3.pop_back();//remove from last
     str3 = c + str3; 
-    cout<<str3<<endl;//str3.pop_back()
-
+    cout<<str3<<endl;//str3.pop_back(
     
     return 0;
 }
