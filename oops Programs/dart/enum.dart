@@ -23,5 +23,5 @@ void main() {
 
     for (var day in DayOfWeek.values) {
     print(day);
-  }s
+  }
 }

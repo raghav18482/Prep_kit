@@ -31,7 +31,8 @@ int main() {
     cout<<str2<<endl;
     str2.erase(remove(str2.begin(), str2.end(), ','), str2.end()); // Removes all commas
     cout << str2<<endl;
-    cout<<str3.substr(0,3)<<endl;//c++
+    string str = str3.substr(0,3);//c++
+    cout<<str<<endl;
     char c = str3.back();//take last character
     str3.pop_back();//remove from last
     str3 = c + str3; 
