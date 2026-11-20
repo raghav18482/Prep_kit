@@ -313,9 +313,9 @@ def section_lists() -> None:
     print(animals[::2])                              # every 2nd from start
     print(animals[-8:-1:2])                          # every 2nd in a negative window
 
-    colors.insert(1, "green")                        # at index
-    colors.append("orange")                          # one item at end
-    colors.extend(["pink", "black"])                 # any iterable
+    colors.insert(1, "green")                        # O(n) — dynamic array (Python list), shifts elements
+    colors.append("orange")                          # amortized O(1) — dynamic array (Python list)
+    colors.extend(["pink", "black"])                 # O(k) — dynamic array (Python list), k items added
     print(colors)
     colors[1:4] = ["juan", "Anastasia"]              # slice assignment can change length
     print(colors)
@@ -342,6 +342,8 @@ def section_lists() -> None:
     print("stack pop:", stack.pop())
     # For a queue use collections.deque (list.pop(0) is O(n)).
 
+    # Shallow copy: creates a new outer collection, but keeps references to the same nested objects.
+    # Deep copy: recursively copies nested objects, so the copy is independent of the original.
     copy1 = nums[:]                                  # shallow copies
     copy2 = nums.copy()
     print(copy1 == nums, copy1 is nums, copy2)
@@ -515,7 +517,7 @@ def section_arrays() -> None:
     nums_list = list(range(1000))
     nums_arr = array("i", nums_list)
     print("list bytes ~", sys.getsizeof(nums_list) + sum(sys.getsizeof(n) for n in nums_list),
-          "| array bytes ~", sys.getsizeof(nums_arr))
+    "| array bytes ~", sys.getsizeof(nums_arr))
 
     # NumPy (third-party: pip install numpy) is what people usually mean by
     # "arrays" in data/ML work: n-dimensional, vectorised maths, broadcasting.
