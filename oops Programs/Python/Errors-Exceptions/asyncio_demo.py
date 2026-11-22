@@ -3,7 +3,7 @@ import time
 
 
 async def fetch_data(name: str, delay: float) -> str:
-    asyncio.sleep(delay)  # Simulates non-blocking I/O wait 
+    await asyncio.sleep(delay)  # Simulates non-blocking I/O wait 
     #this print time 5 seconds because it is non-blocking and the other task is running concurrently
 
     #time.sleep(delay)  # Simulates blocking I/O wait
